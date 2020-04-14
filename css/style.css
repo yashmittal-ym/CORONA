@@ -28,6 +28,7 @@ h1, h2, h3, h4, h5,
 .text-primary {
   color: #f7ca44 !important; }
 
+
 .ftco-navbar-light {
   background: transparent !important;
   position: absolute;
@@ -292,9 +293,9 @@ h1, h2, h3, h4, h5,
   padding: 50px;
   color: #000; }
   .block-48 .block-48-text-1 {
-    font-size: 30px; }
+    font-size: 15px; }
   .block-48 .block-48-counter {
-    font-size: 70px;
+    font-size: 30px;
     line-height: 1; }
 
 .block-11 .owl-stage {
