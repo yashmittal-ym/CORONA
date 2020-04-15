@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>world wide data</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -10,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
 <body >
+<canvas id="myChart" width="300" height="100"></canvas>
 <div class="table-responsive">
     <table class="table" id=CountryWise>
         <thead>
@@ -25,13 +27,30 @@
         </thead>
     </table>
 </div>
-<script>  
+<script>
+    
     const url="https://api.covid19api.com/summary";
+    const ylabels=[];const xlabels=[];
     async function getData(){
         const response= await fetch(url);
         const data=await response.json();
         const CountryWise=document.getElementById('CountryWise');
-        console.log(data);       
+        console.log(data.Global);
+        // for(var i=0;i<6;i++){
+            ylabels.push(data.Global.NewConfirmed);
+            ylabels.push(data.Global.NewDeaths);
+            ylabels.push(data.Global.NewRecovered);
+            ylabels.push(data.Global.TotalConfirmed);
+            ylabels.push(data.Global.TotalDeaths);
+            ylabels.push(data.Global.TotalRecovered);
+            xlabels.push("NewConfirmed");
+            xlabels.push("NewDeaths");
+            xlabels.push("NewRecovered");
+            xlabels.push("TotalConfirmed");
+            xlabels.push("TotalDeaths");
+            xlabels.push("TotalRecovered");
+     
+        
         for(var i=1;i<=246;i++){
             var x=CountryWise.insertRow();
             x.insertCell(0);
@@ -49,8 +68,34 @@
             x.insertCell(6);    
             CountryWise.rows[i].cells[6].innerHTML=data.Countries[i-1].TotalRecovered;
         }
+        console.log(data);
      }
      getData();
+     console.log(ylabels);
+     console.log(xlabels);
+     var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: xlabels,
+            datasets: [{
+                label: 'World wide stats',
+                data: ylabels,
+                fill: false,
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
 </script>
 </body>
 </html>
