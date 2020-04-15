@@ -22,6 +22,11 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"</script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
   </head>
   <body>
     
@@ -33,11 +38,11 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="index.html" class="nav-link">Case Count</a></li>
           <li class="nav-item"><a href="index.html" class="nav-link">Precautions</a></li>
           <li class="nav-item"><a href="index.html" class="nav-link">Symptoms</a></li>
           <li class="nav-item"><a href="index.html" class="nav-link">India Stats</a></li>
           <li class="nav-item"><a href="index.html" class="nav-link">Global Stats</a></li>
-          <li class="nav-item"><a href="index.html" class="nav-link">Graphs</a></li>
           <li class="nav-item"><a href="index.html" class="nav-link">About Us</a></li>
         </ul>
       </div>
@@ -91,12 +96,12 @@
     </div>
   </div>
 
-  <div class="site-section border-top">
+  <div class="site-section border-top" style="background-image: url('images/img_2.jpg');">
     <h2 style="text-align: center;">PRECAUTIONS</h2>
     <br>
       <h1 style="text-align: center;">STAY HOME.SAVE LIVES.</h1>
       <h4 style="text-align: center;">Help stop coronavirus</h4>
-      <div style="margin-left:45%;">
+      <div style="margin-left:45%; color: black;">
       <a style="color : red;">1</a><a><b> STAY </b>home</a><br>
       <a style="color : red;">2 </a><a><b> KEEP </b>safe distance</a><br>
       <a style="color : red;">3 </a><a><b> WASH </b>hands often</a><br>
@@ -113,16 +118,16 @@
     <div class="container">
     <div class="row d-flex justify-content-around" style="margin-left: 10%;"> 
       <div class="col-lg-3 col-md-3 col-12">
-        <figure><img src="images/bg_1.jpg" class="img-fluid" width="120" height="120"><figcaption style="color: black;">Cough</figcaption></figure>
+        <figure><img src="images/cough.png" class="img-fluid" width="120" height="120"><figcaption style="color: black;"></figcaption></figure>
       </div>
       <div class="col-lg-3 col-md-3 col-12">
-        <figure><img src="images/bg_1.jpg" class="img-fluid" width="120" height="120"><figcaption style="color: black;">Fever</figcaption></figure>
+        <figure><img src="images/fever.png" class="img-fluid" width="120" height="120"><figcaption style="color: black;"></figcaption></figure>
       </div>
       <div class="col-lg-3 col-md-3 col-12">
-        <figure><img src="images/bg_1.jpg" class="img-fluid" width="120" height="120"><figcaption style="color: black;">Tiredness</figcaption></figure>
+        <figure><img src="images/sorethroat.png" class="img-fluid" width="120" height="120"><figcaption style="color: black;"></figcaption></figure>
       </div>
       <div class="col-lg-3 col-md-3 col-12">
-        <figure><img src="images/bg_1.jpg" class="img-fluid" width="120" height="120"><figcaption style="color: black;">Difficulty in breathing</figcaption></figure>
+        <figure><img src="images/shortofbreath.png" class="img-fluid" width="120" height="120"><figcaption style="color: black;"></figcaption></figure>
       </div>
     </div>
     </div>
@@ -133,12 +138,101 @@
       <div class="row mb-3 justify-content-center">
         <div class="col-md-8 text-center">
           <h2>INDIA STATS</h2>
-          <p class="lead">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p><a href="#" class="link-underline">View All Fundraisers</a></p>
+          <p class="lead">Real-time cases visualized</p>
+          <!-- <p><a href="#" class="link-underline">View All Fundraisers</a></p> -->
         </div>
       </div>
     </div>
 
+    <canvas id="myChart" width="400" height="150"></canvas>   
+     
+
+<div class="table-responsive">
+    <table class="table" id=stateWise style="color: blue;">
+        <thead>
+          <tr>
+            <th>States</th>
+            <th>Confirmed</th>
+            <th>Active</th>
+            <th>Deaths</th>
+            <th>Recovered</th>
+          </tr>
+        </thead>
+    </table>
+</div>
+
+<script>
+    // world's country wise stats--> "https://api.covid19api.com/";
+    // india's overall stats   -->  https://coronavirus-19-api.herokuapp.com/countries/india
+    // india's district wise stats   -->  https://api.covid19india.org/state_district_wise.json    -->https://api.covid19india.org/data.json
+   
+    const url="https://api.covid19india.org/data.json";
+    const xlabels=[];const ylabels=[];
+    async function getData(){
+        const response= await fetch(url);
+        const data=await response.json();
+        const stateWise=document.getElementById('stateWise');
+        
+        for(var i=0;i<data.cases_time_series.length;i=i+1){
+            xlabels.push(data.cases_time_series[i].date);
+        }
+        for(var i=0;i<data.cases_time_series.length;i=i+1){
+            ylabels.push(data.cases_time_series[i].totalconfirmed);
+        }
+        
+        // var x=0;
+        // while(x<=data.statewise[0].confirmed){
+        //     ylabels.push(x);
+        //     x=x+1000;
+        // }ylabels.push(x);
+        
+        // console.log(data.cases_time_series.length)==76
+        for(var i=1;i<=38;i++){
+            var x=stateWise.insertRow();
+            x.insertCell(0);
+            stateWise.rows[i].cells[0].innerHTML=data.statewise[i-1].state;
+            x.insertCell(1);
+            stateWise.rows[i].cells[1].innerHTML=data.statewise[i-1].confirmed;
+            x.insertCell(2);
+            stateWise.rows[i].cells[2].innerHTML=data.statewise[i-1].active;
+            x.insertCell(3);
+            stateWise.rows[i].cells[3].innerHTML=data.statewise[i-1].deaths;
+            x.insertCell(4);
+            stateWise.rows[i].cells[4].innerHTML=data.statewise[i-1].recovered;
+        }
+        // return { xlabels, ylabels };
+    }
+     getData();
+
+// -->>   chart .js
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    // const dataTemps = await getData();
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: xlabels,
+            datasets: [{
+                label: 'Number of active cases in india',
+                data: ylabels,
+                fill: false,
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+   
+</script>
+          
     <div class="container-fluid">
 
 
