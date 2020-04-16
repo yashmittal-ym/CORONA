@@ -21,15 +21,15 @@
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"</script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-
+    
   </head>
   <body>
-    
+  
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
       <a class="navbar-brand" href="index.html">COVID-19</a>
@@ -38,16 +38,18 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="index.html" class="nav-link">Case Count</a></li>
-          <li class="nav-item"><a href="index.html" class="nav-link">Precautions</a></li>
-          <li class="nav-item"><a href="index.html" class="nav-link">Symptoms</a></li>
-          <li class="nav-item"><a href="index.html" class="nav-link">India Stats</a></li>
-          <li class="nav-item"><a href="index.html" class="nav-link">Global Stats</a></li>
-          <li class="nav-item"><a href="index.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="#a" class="nav-link">Case Count</a></li>
+          <li class="nav-item"><a href="#b" class="nav-link">Visualized Data</a></li>
+          <li class="nav-item"><a href="/Users/gupta/Desktop/Corona/india.html" target="_blank" class="nav-link">India Stats</a></li>
+          <li class="nav-item"><a href="/Users/gupta/Desktop/Corona/world.html" target="_blank" class="nav-link">Global Stats</a></li>
+          <li class="nav-item"><a href="#c" class="nav-link">Symptoms</a></li>
+          <li class="nav-item"><a href="#d" class="nav-link">Precautions</a></li>
+          <li class="nav-item"><a href="#e" class="nav-link">About Us</a></li>
         </ul>
       </div>
     </div>
   </nav>
+  
   
   <div class="block-31" style="position: relative;">
     <div class="owl-carousel loop-block-31 ">
@@ -55,10 +57,10 @@
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-lg-5 col-md-5 col-12 order-lg-2 order-1">
-              <img class="corona" src="images/corona1.webp" style="width: 80%; height: 80%; padding-left: 100px;padding-bottom: 30px;">
+              <span class="corona"><img src="images/corona1.webp" style="width: 80%; height: 80%; padding-left: 100px;padding-bottom: 30px;"></span>
             </div>
             <div class="col-lg-7 col-md-7 col-12 order-lg-1 order-2">
-              <h3 class="heading mb-5">Protect yourself and your loved one's safe. Stay safe!</h3>
+              <h3 class="heading mb-5">Protect yourself and your loved one's.</h3><h3 class="heading mb-5" style="font-size:400%"> Stay safe!</h3>
             </div>
           </div>          
         </div>
@@ -66,28 +68,28 @@
     </div>
   </div>
   
-  <div class="site-section section-counter" >
-    <h2 style="text-align: center;">CASE COUNT</h2>
+  <div class="site-section section-counter" id="a">
+    <h2 style="text-align: center;margin-top: 2%;">CASE COUNT</h2>
     <br>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row d-flex justify-content-around">  
 
-          <div class="block-48">
+          <div class="block-48 col-lg-3 col-12">
               <span class="block-48-text-1">Total Cases- India</span>
               <div class="block-48-counter ftco-number" data-number="1321901">0</div>              
             </div>     
         
-          <div class="block-48">
+          <div class="block-48 col-lg-3 col-12">
               <span class="block-48-text-1">Total Cases Worldwide</span>
               <div class="block-48-counter ftco-number" data-number="4421901">0</div>
             </div>       
         
-          <div class="block-48">
+          <div class="block-48 col-lg-3 col-12">
               <span class="block-48-text-1">Recovered</span>
               <div class="block-48-counter ftco-number" data-number="32191">0</div>
             </div>
 
-            <div class="block-48">
+            <div class="block-48 col-lg-3 col-12">
               <span class="block-48-text-1">Deaths</span>
               <div class="block-48-counter ftco-number" data-number="10">0</div>
             </div>     
@@ -96,8 +98,102 @@
     </div>
   </div>
 
-  <div class="site-section border-top" style="background-image: url('images/img_2.jpg');">
-    <h2 style="text-align: center;">PRECAUTIONS</h2>
+  <div class="site-section fund-raisers bg-light" id="b">
+
+    <div class="container-fluid">
+
+      <h2 style="margin-left: 2rem;font-size: 40px;margin-top: 2%;" >VISUALIZED DATA</h2>
+        <div class="col-md-12 block-11">
+          <div class="nonloop-block-11 owl-carousel">
+           
+            <div class="card fundraise-item">
+              <a href="#"><img class="card-img-top" src="images/ind.png" alt="Image placeholder"></a>
+              <div class="card-body">
+                <h3 class="card-title"><a href="/Users/gupta/Desktop/Corona/india.html" target="_blank" id="b">India Statistics</a></h3>
+                <p class="card-text">Representing state wise stats of affected patients.</p>
+                <span class="donation-time mb-3 d-block">Updated today</span>
+                <div class="progress custom-progress-success">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <span class="fund-raised d-block">Few minutes ago.</span>
+              </div>
+            </div>
+
+            
+            <div class="card fundraise-item" id="b">
+              <a href="#"><img class="card-img-top" src="images/world.jpg" alt="Image placeholder"></a>
+              <div class="card-body">
+                <h3 class="card-title"><a href="/Users/gupta/Desktop/Corona/World.html" target="_blank">Global Statistics</a></h3>
+                <p class="card-text">Representing country wise stats of affected patients.</p>
+                <span class="donation-time mb-3 d-block">Updated today</span>
+                <div class="progress custom-progress-success">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <span class="fund-raised d-block">Few minutes ago.</span>
+              </div>
+            </div>
+            
+            <div class="card fundraise-item">
+              <a href="#"><img class="card-img-top" src="images/states.jpg" alt="Image placeholder"></a>
+              <div class="card-body">
+                <h3 class="card-title"><a href="/Users/gupta/Desktop/Corona/indiamap.html" target="_blank">India Map - State wise</a></h3>
+                <p class="card-text">Representing affected cases count nationally.</p>
+                <span class="donation-time mb-3 d-block">Updated today</span>
+                <div class="progress custom-progress-success">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <span class="fund-raised d-block">Few minutes ago.</span>
+              </div>
+            </div>
+            
+            <div class="card fundraise-item">
+              <a href="#"><img class="card-img-top" src="images/country.jpg" alt="Image placeholder"></a>
+              <div class="card-body">
+                <h3 class="card-title"><a href="/Users/gupta/Desktop/Corona/worldmap.html" target="_blank">World Map - Country wise</a></h3>
+                <p class="card-text">Representing affected cases count internationally.</p>
+                <span class="donation-time mb-3 d-block">Updated today</span>
+                <div class="progress custom-progress-success">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <span class="fund-raised d-block">Few minutes ago.</span>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+  </div> <!-- .section -->
+
+
+  <div class="featured-section overlay-color-2" style="background-image: url('images/img_1.jpg');" id="c">
+    <div class="container"><h2 style="color:darkred;position:absolute;center;margin-left:33%;margin-top: 2%;">SYMPTOMS</h2></div>
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid">
+    <div class="row d-flex justify-content-around" > 
+      <div class="col-lg-3 col-md-3 col-12" >
+        <figure style="text-align: center;"><img src="images/cough.png" class="img-fluid" width="120" height="120"><figcaption style="color: black;"></figcaption></figure>
+      </div>
+      <div class="col-lg-3 col-md-3 col-12" >
+        <figure style="text-align: center;"><img src="images/fever.png" class="img-fluid" width="120" height="120"><figcaption style="color: black;"></figcaption></figure>
+      </div>
+      <div class="col-lg-3 col-md-3 col-12" >
+        <figure style="text-align: center;"><img src="images/sorethroat.png" class="img-fluid" width="120" height="120"><figcaption style="color: black;"></figcaption></figure>
+      </div>
+      <div class="col-lg-3 col-md-3 col-12" >
+        <figure style="text-align: center;"><img src="images/shortofbreath.png" class="img-fluid" width="120" height="120"><figcaption style="color: black;"></figcaption></figure>
+      </div>
+    </div>
+    </div>
+    </div>
+
+  </div>
+
+
+  <div class="site-section border-top" style="background-image: url('images/img_2.jpg');" id="d">
+    <h2 style="text-align: center;margin-top: 2%;">PRECAUTIONS</h2>
     <br>
       <h1 style="text-align: center;">STAY HOME.SAVE LIVES.</h1>
       <h4 style="text-align: center;">Help stop coronavirus</h4>
@@ -110,287 +206,9 @@
     </div>
   </div>
 
-  <div class="featured-section overlay-color-2" style="background-image: url('images/bg_3.jpg');">
-    <h2 style="color:darkred;position: absolute;margin-left: 45%;">SYMPTOMS</h2>
-    <br>
-    <br>
-    <br>
-    <div class="container">
-    <div class="row d-flex justify-content-around" style="margin-left: 10%;"> 
-      <div class="col-lg-3 col-md-3 col-12">
-        <figure><img src="images/cough.png" class="img-fluid" width="120" height="120"><figcaption style="color: black;"></figcaption></figure>
-      </div>
-      <div class="col-lg-3 col-md-3 col-12">
-        <figure><img src="images/fever.png" class="img-fluid" width="120" height="120"><figcaption style="color: black;"></figcaption></figure>
-      </div>
-      <div class="col-lg-3 col-md-3 col-12">
-        <figure><img src="images/sorethroat.png" class="img-fluid" width="120" height="120"><figcaption style="color: black;"></figcaption></figure>
-      </div>
-      <div class="col-lg-3 col-md-3 col-12">
-        <figure><img src="images/shortofbreath.png" class="img-fluid" width="120" height="120"><figcaption style="color: black;"></figcaption></figure>
-      </div>
-    </div>
-    </div>
-    </div>
+ <!-- .featured-donate -->
 
-  <div class="site-section fund-raisers bg-light">
-    <div class="container">
-      <div class="row mb-3 justify-content-center">
-        <div class="col-md-8 text-center">
-          <h2>INDIA STATS</h2>
-          <p class="lead">Real-time cases visualized</p>
-          <!-- <p><a href="#" class="link-underline">View All Fundraisers</a></p> -->
-        </div>
-      </div>
-    </div>
-
-    <canvas id="myChart" width="400" height="150"></canvas>   
-     
-
-<div class="table-responsive">
-    <table class="table" id=stateWise style="color: blue;">
-        <thead>
-          <tr>
-            <th>States</th>
-            <th>Confirmed</th>
-            <th>Active</th>
-            <th>Deaths</th>
-            <th>Recovered</th>
-          </tr>
-        </thead>
-    </table>
-</div>
-
-<script>
-    // world's country wise stats--> "https://api.covid19api.com/";
-    // india's overall stats   -->  https://coronavirus-19-api.herokuapp.com/countries/india
-    // india's district wise stats   -->  https://api.covid19india.org/state_district_wise.json    -->https://api.covid19india.org/data.json
-   
-    const url="https://api.covid19india.org/data.json";
-    const xlabels=[];const ylabels=[];
-    async function getData(){
-        const response= await fetch(url);
-        const data=await response.json();
-        const stateWise=document.getElementById('stateWise');
-        
-        for(var i=0;i<data.cases_time_series.length;i=i+1){
-            xlabels.push(data.cases_time_series[i].date);
-        }
-        for(var i=0;i<data.cases_time_series.length;i=i+1){
-            ylabels.push(data.cases_time_series[i].totalconfirmed);
-        }
-        
-        // var x=0;
-        // while(x<=data.statewise[0].confirmed){
-        //     ylabels.push(x);
-        //     x=x+1000;
-        // }ylabels.push(x);
-        
-        // console.log(data.cases_time_series.length)==76
-        for(var i=1;i<=38;i++){
-            var x=stateWise.insertRow();
-            x.insertCell(0);
-            stateWise.rows[i].cells[0].innerHTML=data.statewise[i-1].state;
-            x.insertCell(1);
-            stateWise.rows[i].cells[1].innerHTML=data.statewise[i-1].confirmed;
-            x.insertCell(2);
-            stateWise.rows[i].cells[2].innerHTML=data.statewise[i-1].active;
-            x.insertCell(3);
-            stateWise.rows[i].cells[3].innerHTML=data.statewise[i-1].deaths;
-            x.insertCell(4);
-            stateWise.rows[i].cells[4].innerHTML=data.statewise[i-1].recovered;
-        }
-        // return { xlabels, ylabels };
-    }
-     getData();
-
-// -->>   chart .js
-
-    var ctx = document.getElementById('myChart').getContext('2d');
-    // const dataTemps = await getData();
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: xlabels,
-            datasets: [{
-                label: 'Number of active cases in india',
-                data: ylabels,
-                fill: false,
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-   
-</script>
-          
-    <div class="container-fluid">
-
-
-        
-        <div class="col-md-12 block-11">
-          <div class="nonloop-block-11 owl-carousel">
-
-            <div class="card fundraise-item">
-              <a href="#"><img class="card-img-top" src="images/img_1.jpg" alt="Image placeholder"></a>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Water Is Life. Clean Water In Urban Area</a></h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-              </div>
-            </div>
-
-            
-            <div class="card fundraise-item">
-              <a href="#"><img class="card-img-top" src="images/img_7.jpg" alt="Image placeholder"></a>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Need Shelter for Children in Africa</a></h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-              </div>
-            </div>
-            
-            <div class="card fundraise-item">
-              <a href="#"><img class="card-img-top" src="images/img_3.jpg" alt="Image placeholder"></a>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Children Needs Education</a></h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-              </div>
-            </div>
-
-
-            <div class="card fundraise-item">
-              <a href="#"><img class="card-img-top" src="images/img_4.jpg" alt="Image placeholder"></a>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Refugees Needs Food</a></h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-              </div>
-            </div>
-
-            
-            <div class="card fundraise-item">
-              <a href="#"><img class="card-img-top" src="images/img_6.jpg" alt="Image placeholder"></a>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Voluteer </a></h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-              </div>
-            </div>
-            
-            <div class="card fundraise-item">
-              <a href="#"><img class="card-img-top" src="images/img_3.jpg" alt="Image placeholder"></a>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Children Needs Food</a></h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-              </div>
-            </div>
-           
-          </div>
-        </div>
-      <!-- </div> -->
-    </div>
-  </div> <!-- .section -->
-
-
-  <div class="site-section fund-raisers">
-    <div class="container">
-      <div class="row mb-3 justify-content-center">
-        <div class="col-md-8 text-center">
-          <h2>GLOBAL STATS</h2>
-          <p class="lead">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p class="mb-5"><a href="#" class="link-underline">View All Donations</a></p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid">
-            <div class="donate-info">
-              <h2>Jorge Smith</h2>
-              <span class="time d-block mb-3">Donated Just now</span>
-              <p>Donated <span class="text-success">$252</span> <br> <em>for</em> <a href="#" class="link-underline fundraise-item">Water Is Life. Clean Water In Urban Area</a></p>
-            </div>
-          </div>    
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <img src="images/person_2.jpg" alt="Image placeholder" class="img-fluid">
-            <div class="donate-info">
-              <h2>Christine Charles</h2>
-              <span class="time d-block mb-3">Donated 1 hour ago</span>
-              <p>Donated <span class="text-success">$400</span> <br> <em>for</em> <a href="#" class="link-underline fundraise-item">Children Needs Education</a></p>
-            </div>
-          </div>    
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <img src="images/person_3.jpg" alt="Image placeholder" class="img-fluid">
-            <div class="donate-info">
-              <h2>Albert Sluyter</h2>
-              <span class="time d-block mb-3">Donated 4 hours ago</span>
-              <p>Donated <span class="text-success">$1,200</span> <br> <em>for</em> <a href="#" class="link-underline fundraise-item">Need Shelter for Children in Africa</a></p>
-            </div>
-          </div>    
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <img src="images/person_4.jpg" alt="Image placeholder" class="img-fluid">
-            <div class="donate-info">
-              <h2>Andrew Holloway</h2>
-              <span class="time d-block mb-3">Donated 9 hours ago</span>
-              <p>Donated <span class="text-success">$100</span> <br> <em>for</em> <a href="#" class="link-underline fundraise-item">Water Is Life. Clean Water In Urban Area</a></p>
-            </div>
-          </div>    
-        </div>
-      </div>
-    </div>
-  </div> <!-- .section -->
-
-  
-
-  </div> <!-- .featured-donate -->
-
-  <div class="site-section bg-light">
+  <!-- <div class="site-section bg-light">
     <div class="container">
       <div class="row mb-5">
         <div class="col-md-12">
@@ -434,22 +252,23 @@
         </div>
       </div>
     </div>
-  </div> <!-- .section -->
+  </div> .section -->
 
-  <div class="featured-section overlay-color-2" style="background-image: url('images/bg_2.jpg');">
+  <div class="featured-section overlay-color-2" style="background-image: url('images/ambush.jpg');">
+    
     
     <div class="container">
       <div class="row">
 
         <div class="col-md-6 mb-5 mb-md-0">
-          <img src="images/bg_2.jpg" alt="Image placeholder" class="img-fluid">
+          <img src="images/ambush.jpg" alt="Image placeholder" class="img-fluid">
         </div>
 
         <div class="col-md-6 pl-md-5">
 
           <div class="form-volunteer">
             
-            <h2>Be A Volunteer Today</h2>
+            <h2>In need of help?</h2>
             <form action="#" method="post">
               <div class="form-group">
                 <!-- <label for="name">Name</label> -->
@@ -457,7 +276,7 @@
               </div>
               <div class="form-group">
                 <!-- <label for="email">Email</label> -->
-                <input type="text" class="form-control py-2" id="email" placeholder="Enter your email">
+                <input type="text" class="form-control py-2" id="email" placeholder="Enter your mobile number">
               </div>
               <div class="form-group">
                 <!-- <label for="v_message">Email</label> -->
@@ -476,7 +295,7 @@
 
   </div> <!-- .featured-donate -->
 
-  <footer class="footer">
+  <footer class="footer" id="e">
     <div class="container">
       <div class="row mb-5">
         <div class="col-md-6 col-lg-4">
@@ -487,7 +306,7 @@
           <div class="block-23">
             <h3 class="heading-section">Get Connected</h3>
               <ul>
-                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">yashmittal@gmail.com</span></a></li>
+                <li><a href="mailto:yash.mittal7417@gmail.com"><span class="icon icon-envelope"></span><span class="text">yash.mittal7417@gmail.com</span></a></li>
               </ul>
             </div>
         </div>
@@ -496,7 +315,7 @@
           <div class="block-23">
             <h3 class="heading-section">Get Connected</h3>
               <ul>
-                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">guptavedant2312@gmail.com</span></a></li>
+                <li><a href="mailto:guptavedant2312@gmail.com"><span class="icon icon-envelope"></span><span class="text">guptavedant2312@gmail.com</span></a></li>
               </ul>
             </div>
         </div>
@@ -507,7 +326,6 @@
         <div class="col-md-12 text-center">
           
             <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             Copyright &copy;<script>document.write(new Date().getFullYear());</script> By Yash Mittal and Vedant Gupta
             </p>
             <p><a href="#" class="link-underline">Back to top</a></p>
@@ -539,6 +357,8 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+
+  
     
   </body>
 </html>
